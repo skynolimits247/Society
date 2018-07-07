@@ -1,0 +1,8 @@
+{% extends "manbasepage.html" %}
+{% block content%}
+    <form action="" method="POST">
+      {% csrf_token %}
+        {{form.as_p}}
+        <button type='submit' class="btn btn-warning" style="text-align:center; padding-top:7px; padding-bottom:7px; padding-right:40px;">Save</button>
+        </form>
+    {% endblock %}

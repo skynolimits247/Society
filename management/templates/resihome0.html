@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load staticfiles %}
+    <meta charset="utf-8>
+    <meta name = "viewport" content="width=device-width">
+    <meta name = "description" content="Society">
+    <meta name = "keyword" content="web design">
+    <meta name = "author" content="kumar gourav">
+    <title>Neelkanth | Welcome</title>
+    <link rel="icon" href ="{% static 'image/images.jpg' %}">
+    <link rel ="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+     <link rel="stylesheet" href="{% static 'style/font-awesome.min.css' %}">
+     <script src="https://use.fontawesome.com/1c57639878.js"></script>
+  </head>
+  <body>
+    <header>
+      <div class="container" >
+        <div id="branding">
+          <h1><span class="highlight">NeelKanth </span> Apartment</h1>
+        </div>
+        <nav>
+          <ul>
+            <li><a  href ="/man/home/">Home</a></li>
+            <li><a href="#">Events</a></li>
+            <li><a href="/man/dir/">Directory</a></li>
+            <li><a href="#contact">Complaint</a></li>
+            <li><a href="#contact">Notices</a></li>
+            <li><a href="/man/profile/{{cu.d}}/">Edit Profile</a></li>
+            <li><a href="/man/logout/">LogOut</a></li>
+          </ul>
+        </nav>
+      </div>
+      <h1>Welcome, <span class="highlight">{{cu.first_name}}</span></h1>
+    </header>
+    <div class="page-header text-center">
+      {% block content %}
+       {% endblock %}
+  </div>
+  <footer>
+      <p>NeelKanth Apartment, Copyright &copy; 2017</p>
+  </footer>
+</body>
+</html>

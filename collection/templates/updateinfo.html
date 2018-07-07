@@ -1,0 +1,28 @@
+{% extends "manbasepage.html" %}
+{% block content %}
+<table align="center" style="text-align:center;" class="table table-striped">
+
+         {% if q %}
+         <thead align="center">
+               <th><tr> <td>Flat NO</td>
+                <td>Contact Number</td>
+                <td>Owner's Name</td>
+                <td>Address</td>
+                <td>Floor</td>
+                <td>occupation</td>
+                <td>Email Adress</td></tr></th></thead>
+            <tr>
+               <td>{{ q.flat_no }}</td>
+               <td>{{ q.contact_no }}</td>
+               <td>{{ q.owner_name}}</td>
+               <td>{{ q.residence }}</td>
+               <td>{{ q.floor }}</td>
+               <td>{{ q.occupation }}</td>
+               <td>{{ q.email}}</td>
+               <td><a type="button" class="btn btn-primary" href="/col/upflat/{{q.flat_no}}/">Update Post</a></td>
+            </tr>
+        {% else %}
+        <tr><td><h3>Sorry no results found...!</h3></tr></td>
+        {% endif %}
+      </table>
+{% endblock %}

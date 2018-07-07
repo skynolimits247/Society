@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+{% extends "basepage.html" %}
+{% block content%}
+
+    <div class="well text-center" style="margin-right:20%; margin-left:20%;">
+    <h1 style="text-align:center;">Login :</h1>
+    <form action='/col/check/' method='POST'>
+    {% csrf_token %}
+    <table style="text-align:center" align="center">
+    <tr>
+    <td style="padding-top:3%; padding-bottom:3%;"><strong>Email <strong></td>
+    <td>
+    <input type="text" placeholder="type your username here" name="username" id="search_box" size="30" class="panel" style="padding-top:3%; padding-bottom:3%;"></td></td></tr>
+    <tr>
+    <td style="padding-top:3%; padding-bottom:3%;"><strong>PASSWORD <strong></td>
+    <td>
+    <input type="password" placeholder="type your password here" name="password" id="search_box" size="30" class="panel" style="padding-top:3%; padding-bottom:3%;"></td></td></tr>
+    <tr><td colspan="2"><button type='submit' class="btn btn-success">LogIn</button></td></tr>
+
+    </table>
+    </form>
+    </div>
+{% endblock %}

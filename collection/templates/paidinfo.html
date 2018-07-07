@@ -1,0 +1,27 @@
+{% extends "manbasepage.html" %}
+{% block content%}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h2 style="text-align:center; margin-top:180px;">Payment Recieved</h2>
+              <table align="center" style="text-align:center;" class="table table-striped">
+        	{% if q %}
+
+                <thead><tr><td><h3>Flat no.</h3></td><td><h3>Maintenance Paid</h3></td><td><h3>Maintenance Fine</h3></td></td><td><h3>Sinking Fund Paid</h3></td><td><h3>Sinking Fund Fine</h3></td><td><h3>Parking Paid</h3></td><td><h3>Parking Fine</h3></td></tr></thead>
+                {% for i in q %}
+                    <tr>
+                       <td>{{ i.flat_no }}</td>
+                       <td>{{ i.maintenance_paid }}</td>
+                       <td>{{ i.maintenance_fine_paid}}</td>
+                       <td>{{ i.sinkingfund_paid }}</td>
+                       <td>{{ i.sinkingfund_fine_paid }}</td>
+                       <td>{{ i.parking_paid }}</td>
+                       <td>{{ i.parking_fine_paid }}</td>
+                      <!--  <td> input type='submit' value='{{ i.flat_no }}' class="btn col-lg-11" name="name" id="name" href="submit"</td> -->
+                    </tr>
+                {% endfor %}
+          {% else %}
+                <tr><td><h1>Sorry...No results found..!</h1><td></tr>
+          {% endif %}
+      </table>
+        </form>
+    {% endblock %}

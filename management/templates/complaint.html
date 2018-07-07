@@ -1,0 +1,20 @@
+{% extends "basepage.html" %}
+{% block content %}
+
+<tr>
+
+	<td class="col-lg-6">
+	<div class="page-header text-center">
+	<h2 >Please fill the complaint form : </h2>
+	</div>
+
+        <form action="/man/cont/" name="my_form1" method='POST'>
+          <div class="form-group text-center">
+            {% csrf_token %}
+						{{ form1.as_p }}
+          <button type="submit" class="btn btn-danger">SUBMIT</button>
+          </div>
+        </form>
+		</td>
+		</tr>
+ {% endblock %}

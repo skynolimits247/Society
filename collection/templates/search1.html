@@ -1,0 +1,14 @@
+{% extends "manbasepage.html" %}
+{% block content%}
+<tr>
+    <td class ="col-lg-6">
+    </div>
+        <form action="/col/search1/" method="POST">
+            {% csrf_token %}
+            <table style="text-align: center" class="table-condensed" align="center">
+                <tr><td>
+                    <input type="panel" placeholder="Enter Flat number" name="search_box" id="search_box" style="padding-top: 10px;padding-right: 40px;"></td><td>
+                    <button type="submit" class="btn btn-warning" style="text-align: center; padding-top: 7px; padding-bottom: 7px;padding-right: 40px;">Submit </button> <br></td></tr>
+                </table>
+        </form>
+{% endblock %}

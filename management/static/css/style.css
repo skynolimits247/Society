@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css?family=Raleway'); /*--- Nav Font --*/
+@import url('https://fonts.googleapis.com/css?family=Playfair+Display:700|Raleway'); /*--- Heading Font --*/
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
+body{
+  margin:0;
+  font-family:'Arial', 'serif';
+  background-color: #f4f4f4;
+  overflow-x: hidden;
+  background: url("https://www.cameyshop.com/wp-content/uploads/2017/01/Cute-Grey-Tilable-Pattern-For-Website-Background.jpg");
+  padding: 0;
+  line-height: 1.5;
+}
+header{
+  opacity: 0.9;
+  top:0;
+  background: #1a1a1d;
+  color: #ffffff;
+  padding-top:30px;
+  min-height: 70px;
+  border-bottom: #c3073f 5px solid;
+}
+header #branding{
+  text-align:center;
+}
+header .highlight{
+   font-size: 50px;
+   color:#c3073f;
+   font-weight: bold;
+ }
+header h1{
+  font-size: 40px;
+}
+
+.container{
+  width: 100%;
+  margin:0;
+  overflow :hidden;
+}
+.contain{
+  width: 80%;
+  margin:0;
+  overflow :hidden;
+}
+.side-nav
+{
+  margin-top: 164px;
+  width: 200px;
+  height: 70%;
+  position: absolute;
+  z-index: 1;
+  top:0;
+  left:0;
+  background-color: #1a1a1d;
+  padding-top: 50px;
+}
+.remain
+{
+  font-family:'Open Sans';
+  opacity: 0.9;
+   width: 225px;
+  margin-top: 164px;
+  float: right;
+  height: 70%;
+  position: absolute;
+  z-index: 1;
+  top:0;
+  right: 0;
+  background-color: #1a1a1d;
+  overflow-x: hidden;
+  padding-top: 50px;
+}
+
+.side-nav a{
+  padding: 10px 10px 20px 50px;
+  text-decoration: none;
+  font-size: 24px;
+  color:#ccc;
+  display: block;
+}
+
+.side-nav a:hover{
+  color:#ee4c7c;
+}
+.remain li {
+  text-decoration: none;
+  padding-bottom: 10px;
+  font-size: 18px;
+  color:#ccc;
+  display: block;
+}
+#marque{
+ font-size:18px;
+ color:white;
+  overflow:auto;
+margin:0px;
+width: 100%;
+}
+#map{
+  margin-top : 190px;
+   opacity: 0.8;
+   font-size: 24px;
+   font-family: 'Raleway';
+   background-color: black;
+}
+#showcase{
+    overflow:auto;
+    margin-left: 202px;
+}
+.full {
+  padding: 30px 10px ;
+ color: white;
+   width:100%;
+   text-align:center;
+    font-family: 'Raleway';
+    font-size:24px;
+    background-color: black;
+    opacity: .8;
+   margin:0%;
+    font-weight: bold;
+ }
+ form input , textarea{
+  height: 50px;
+   width: 200px;
+ }
+  .button_1{
+   font-weight: bold;
+   height: 50px;
+   width: 100px;
+   border: none;
+   background: #e8491d;
+   color: #ffffff;
+   padding: 0px 20px;
+ }
+.left-col {
+ color: white;
+   width:59%;
+   float:left;
+    text-align:center;
+    font-family: 'Raleway';
+    font-size:24px;
+    background-color: black;
+    opacity: .5;
+   margin:auto;
+    font-weight: bold;
+ }
+ .sidebar{
+  color: white;
+   width: 40%;
+   float:right;
+   margin:0;
+    text-align:center;
+    font-family: 'Raleway';
+    font-size:18px;
+    background-color: black;
+    opacity: .5;
+  }
+   .clearfix{
+   clear:both;
+   height: 2%;
+ }
+
+  footer{
+  padding:20px;
+  margin-top: 20px;
+  text-align: center;
+  color:#e3e2df;
+  background-color: #1a1a1d;
+}
+footer a{
+  float:right;
+  text-decoration: none;
+  font-size: 18px;
+  color:#ccc;
+  display: block;
+}
+footer a:hover{
+  color:#ee4c7c;
+}
+-----------------------------------------------------------------------------------------------------
+@media(max-width:768px){
+   header #branding,header nav, header nav, header li ,#newsletter  h1,#newsletter  form,#boxes .box, #main-col, aside{
+    float: none;
+    text-align: center;
+    width:100%;
+  }
+  header{
+    padding-bottom: 20px;
+  }
+  #showcase{
+    margin-top: 40px;
+  }
+
+}
+  @media(max-width: 720px)
+   {
+   overflow: hidden;
+   .into{
+     height: auto;
+     width: auto;
+   }
+  #menu-icon{
+    margin:26px 0 0 26px;
+  }
+  nav ul, nav:active ul{
+    padding: 0;
+    left:5px;
+    width: 30%;
+  }
+  .inner{
+    font-size: 100%;
+  }
+
+  .content h1{
+    font-size: 250%;
+  }
+
+  h2{
+    font-size: 150%;
+  }
+  .left-col{
+    width: 100%;
+    margin:auto;
+    padding: 0  ;
+
+  }
+
+  .sidebar{
+   margin:0 50%;
+  }
+  .contact p{
+    display: block;
+    font-size: 80%;
+    text-align: center;
+    font-weight: bold;
+  }
+  .social{
+    font-size: 70%;}
+  /*..................................................................................*/
+
+#contain {
+  height: 100px;
+  overflow-y: scroll;
+}
+#table_scroll {
+  width: 100%;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  border-collapse: collapse;
+}
+#table_scroll thead th {
+  padding: 10px;
+  background-color: #ea922c;
+  color: #fff;
+}
+#table_scroll tbody td {
+  padding: 10px;
+  background-color: #ed3a86;
+  color: #fff;}

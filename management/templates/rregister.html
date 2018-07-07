@@ -1,0 +1,33 @@
+<html>
+<head>
+{% load staticfiles %}
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+</head>
+	<style>
+	body{
+		padding-top: 40px;
+		margin-left: 20%;
+		margin-right: 20%;
+		font-family: "font-family:verdana;"
+	}
+
+	</style>
+<body>
+
+	<a href="/man/mlogin/" class="btn btn-primary"><< Back to LOGIN PAGE</a>
+<h2 style="text:center;">REGISTER</h2>
+<div class=" well text-center margin-right:80%;">
+<form action='' method='POST' enctype="multipart/form-data">
+{% csrf_token %}
+{{ form1.as_p }}
+{{ form.as_p }}
+<input type='submit' class="btn btn-primary"></button><br>
+
+</form>
+</div>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+</body>
+</html>

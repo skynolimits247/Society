@@ -1,0 +1,38 @@
+
+{% extends "basepage.html" %}
+{% block content%}
+  {% include "search2.html" %}
+{% csrf_token %}
+    <h2 style="text-align:center;"><u>Directory</u></h2>
+    <div class="container text-center" style="padding-bottom:2px; margin-top:80px;">
+
+</div>
+<table align="center" style="text-align:center;" class="table table-striped">
+
+         {% if q %}
+         <thead align="center">
+               <th><tr> <td>Flat NO</td>
+                <td>Contact Number</td>
+                <td>Owner's Name</td>
+                <td>Address</td>
+                <td>Floor</td>
+                <td>occupation</td>
+                <td>Email Adress</td></tr></th></thead>
+         {% for i in q %}
+            <tr>
+               <td>{{ i.flat_no }}</td>
+               <td>{{ i.contact_no }}</td>
+               <td>{{ i.owner_name}}</td>
+               <td>{{ i.residence }}</td>
+               <td>{{ i.floor }}</td>
+               <td>{{ i.occupation }}</td>
+               <td>{{ i.email}}</td>
+
+            </tr>
+
+        {% endfor %}
+        {% else %}
+        <tr><td><h3>Sorry no results found...!</h3></tr></td>
+        {% endif %}
+      </table>
+      {% endblock %}

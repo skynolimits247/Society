@@ -1,0 +1,19 @@
+{% extends "manbasepage.html" %}
+{% block content %}
+<h2>Welcome,<span class="highlight"> {{cu.first_name}}</span></h2>
+<form action='/col/cat/' method='POST'>
+	{% csrf_token %}
+	<h2 style="color:black">Select the option :</small></h2>
+<table align="top">
+	<tbody>
+	<tr><td><input type='submit' value='Add Flat Details' class="btn col-lg-11" name="category" id ="category" href="/col/add/"></td>
+	<td><input type='submit' value='Update Flat Details' class="btn col-lg-11" name="category" id ="category" href="/col/update/"></td>
+	<td><input type='submit' value='Maintenance' class="btn col-lg-11" name="category" id ="category" href="/col/maint/"></td>
+	<td><input type='submit' value='Expenses' class="btn col-lg-11" name="category" id ="category" href="/col/expenses/"></td>
+	<td><input type='submit' value='Add events' class="btn col-lg-11" name="category" id ="category" href="/col/addevent/"></td>
+	<td><input type='submit' value='Add Notice' class="btn col-lg-11" name="category" id ="category" href="/col/addnotice/"></td>
+	<td><input type='submit' value='Complaints Console' class="btn col-lg-11" name="category" id ="category" href="/col/complaintconsole/"></td></tr>
+</tbody>
+</table>
+</form>
+{% endblock %}

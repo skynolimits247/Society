@@ -1,0 +1,12 @@
+{% extends "manbasepage.html" %}
+{% block content%}
+    <form action="" method="POST">
+      {% csrf_token %}
+      <fieldset disabled>
+        {{form.as_p}}
+        <td></td>
+      </fieldset>
+        <button type='submit' class="btn btn-warning" style="text-align:center; padding-top:7px; padding-bottom:7px; padding-right:40px;">Payment Done</button>
+        </form>
+  <a href="/col/home/" class="btn col-lg-11" name="category" id="category" value="Dash Board">Dash Board</a>
+    {% endblock %}

@@ -1,0 +1,30 @@
+{% extends "manbasepage.html" %}
+{% block content%}
+<table align="center" style="text-align:center;" class="table table-striped">
+  <thead><tr><td><h3>Maintenance Header</h3></td><td><h3>Amount</h3></td></tr></thead>
+  {% for i in form1 %}
+      <tr>
+         <td>{{ i.maintenance_header }}</td>
+         <td>{{ i.amount }}</td>
+        <!--  <td> input type='submit' value='{{ i.flat_no }}' class="btn col-lg-11" name="name" id="name" href="submit"</td> -->
+      </tr>
+
+  {% endfor %}
+
+</table>
+    <form action="" method="POST">
+        {% csrf_token %}
+
+
+        <table align="center" style="text-align:center;" class="table table-striped">
+              <tr>
+                <td>Select Financial Year</td> <td>{{form.financial_year}}</td></tr>
+                <tr><td>Select Maintenance Header</td> <td>{{form.type_of_maintenance}}</td>
+              </tr>
+
+              <tr><td colspan="2"><input type="submit" class="btn btn-warning" style="text:center; padding-top:7px; padding-bottom:7px; padding-right:40px;" value="Make Payment"></td></tr>
+        </table>
+
+        </form>
+
+    {% endblock %}

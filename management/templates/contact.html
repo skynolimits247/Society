@@ -1,0 +1,17 @@
+
+<tr>
+
+	<td class="col-lg-6">
+	<div class="page-header text-center">
+	<h2 >Provide your contact details : </h2>
+	</div>
+
+        <form action="" name="my_form" method='POST'>
+          <div class="form-group text-center">
+            {% csrf_token %}
+						{{ form.as_p }}
+          <button type="submit" class="btn btn-danger">SUBMIT</button>
+          </div>
+        </form>
+		</td>
+		</tr>

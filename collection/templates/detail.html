@@ -1,0 +1,28 @@
+{% extends "manbasepage.html" %}
+{% block content%}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h2 style="text-align:center; margin-top:180px;">Flat Information</h2>
+              <table align="center" style="text-align:center;" class="table table-striped">
+        	{% if q %}
+
+                <thead><tr><td><h3>Flat no.</h3></td><td><h3>Contact no.</h3></td><td><h3>owner</h3></td></td><td><h3>Residence</h3></td><td><h3>Occupation</h3></td><td><h3>Email id</h3></td></tr></thead>
+                {% for i in q %}
+                    <tr>
+                       <td>{{ i.flat_no }}</td>
+                       <td>{{ i.contact_no }}</td>
+                       <td>{{ i.owner_name}}</td>
+                       <td>{{ i.residence }}</td>
+                       <td>{{ i.occupation }}</td>
+                       <td>{{ i.email}}</td>
+                      <!--  <td> input type='submit' value='{{ i.flat_no }}' class="btn col-lg-11" name="name" id="name" href="submit"</td> -->
+                    </tr>
+                    <tr><td colspan="6">
+                      <a type='button' class="btn btn-primary" href="pay/{{i.flat_no}}/" value="PAY">PAY</a></td></tr>
+                {% endfor %}
+          {% else %}
+                <tr><td><h1>Sorry...No results found..!</h1><td></tr>
+          {% endif %}
+      </table>
+        </form>
+    {% endblock %}

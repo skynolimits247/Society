@@ -1,0 +1,27 @@
+{% extends "manbasepage.html" %}
+{% block content%}
+    <form action="" method="POST">
+        {% csrf_token %}
+        <h2 style="text-align:center; margin-top:180px;">Payment Recieved</h2>
+              <table align="center" style="text-align:center;" class="table table-striped">
+        	{% if q %}
+
+                <thead><tr><td><h3>Flat no.</h3></td><td><h3>Financial Year</h3></td><td><h3>Type of Maintenance</h3></td><td><h3>Date</h3></td></td><td><h3>Amount Paid</h3></td><td><h3>Fine Paid</h3></td></tr></thead>
+                {% for i in q %}
+                    <tr>
+                       <td>{{ i.flat_no }}</td>
+											 <td>{{ i.financial_year }}</td>
+                       <td>{{ i.type_of_maintenance }}</td>
+                       <td>{{ i.date_time}}</td>
+                       <td>{{ i.amount }}</td>
+                       <td>{{ i.fine}}</td>
+
+                      <!--  <td> input type='submit' value='{{ i.flat_no }}' class="btn col-lg-11" name="name" id="name" href="submit"</td> -->
+                    </tr>
+                {% endfor %}
+          {% else %}
+                <tr><td><h1>Sorry...No results found..!</h1><td></tr>
+          {% endif %}
+      </table>
+        </form>
+    {% endblock %}

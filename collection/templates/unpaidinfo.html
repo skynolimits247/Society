@@ -1,0 +1,115 @@
+{% extends "manbasepage.html" %}
+{% block content%}
+        {% csrf_token %}
+        <h2 style="text-align:center; margin-top:180px;">Unpaid payment records</h2>
+              <table align="center" style="text-align:center;" class="table table-bordered" >
+        	{% if q %}
+
+                <thead><tr><td><h3>Flat no.</h3></td><td><h3>Unpaid Maintenance</h3></td><td><h3>Unpaid Maintenance Fine</h3></td></td><td><h3>Unpaid Sinking Fund</h3></td><td><h3>Unpaid Sinking Fund Fine</h3></td><td><h3>Unpaid Parking</h3></td><td><h3>Unpaid Parking Fine</h3></td></tr></thead>
+                <tbody>
+                  {% for i in q %}
+
+
+
+                    </tr>
+
+                    <script>
+
+                                var text ="";
+                                var flatno={{i.flat_no}}
+                                var mcount = {{i.maintenance_count}}
+                                var man=check(mcount,3000);
+                                var scount={{i.sinkingfund_count}}
+                               var snk=check(scount,500);
+                               var pcount={{i.parking_count}}
+                                 var park=check(pcount,500);
+                                 var maintenance_fine=0;
+                                 var mpaid =0 ;
+                                 var mfine=0;
+                                 var ppaid=0;
+                                 var pfine=0;
+                                 var spaid=0;
+                                 var sfine=0;
+                                 var fine=0;
+                                text+="<tr><td>"+flatno+"</td>"
+                                if(man!=0){
+                                  mfine=man;
+                                  mpaid=(1-mcount)*12000;
+                                  text+="<td>"+mpaid+"</td>";
+                                  text+="<td>"+mfine+"</td>";
+                                }
+                                else{
+                                    mfine=0;
+                                    mpaid=(1-mcount)*12000;
+                                    text+="<td>"+mpaid+"</td>";
+                                    text+="<td>"+mfine+"</td>";
+                                   }
+                                if(snk!=0){
+                                  sfine=snk;
+                                  spaid=(1-scount)*2000;
+                                  text+="<td>"+spaid+"</td>";
+                                  text+="<td>"+sfine+"</td>";
+                                }
+                                else{
+                                     sfine=snk;
+                                     spaid=(1-scount)*2000;
+                                     text+="<td>"+spaid+"</td>";
+                                     text+="<td>"+sfine+"</td>";
+                                   }
+                                if(park!=0){
+                                  pfine=park;
+                                  ppaid=(1-pcount)*500;
+                                  text+="<td>"+ppaid+"</td>";
+                                  text+="<td>"+pfine+"</td>";
+                                }
+                                else{
+                                  prkfine=0;
+                                     ppaid=(1-pcount)*500;
+                                     text+="<td>"+spaid+"</td>";
+                                     text+="<td>"+sfine+"</td></tr>";
+                                   }
+                              function check(x,f1){
+                                var d=new Date();
+                                var m=d.getMonth()+1;
+                                         if (x == 0 && m != 1){
+                                             fine = f1 * 0.05 * (m - 1);
+                                             }
+                                         else if (x == 0.25 && (m != 4)){
+                                             if(m<4){
+                                                fine=0;
+                                                }
+                                             else{
+                                                fine = f1 * 0.05 * (m - 4);
+
+                                                }
+                                          }
+                                         else if (x == 0.50 && (m != 7)){
+                                             if (m < 7){
+                                                 fine = 0;
+                                                 }
+                                             else{
+                                                 fine = f1 * 0.05 * (m - 7);
+                                                 }
+                                                 }
+                                         else if (x == 0.75 &&(m != 10)){
+                                             if (m < 10){
+                                                 fine = 0;
+                                                 }
+                                             else{
+                                                 fine = f1 * 0.05 * (m - 10);
+                                                 }
+                                                 }
+                                      return fine;
+                                }
+
+                                document.write(text);
+                        </script>
+                        {% endfor %}
+
+          {% else %}
+                <tr><td><h1>Sorry...No results found..!</h1><td></tr>
+          {% endif %}
+        </tbody>
+      </table>
+
+    {% endblock %}
