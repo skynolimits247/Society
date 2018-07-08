@@ -41,8 +41,8 @@ from django.contrib.auth.forms import PasswordChangeForm
 
 #....................id pass for message....................
 
-account_sid = "AC58b563d9f8f1eed8806fc9a3f201d164"
-auth_token  = "31dec8df5616533b399dc31fded9c351"
+account_sid = ""
+auth_token  = ""
 client =Client(account_sid, auth_token)
 #...........................................................
 def dir(request):
